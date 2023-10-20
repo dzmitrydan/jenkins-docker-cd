@@ -15,4 +15,6 @@ def pull_requests():
     return render_template("pull_requests.j2", pull_requests=get_pull_requests(state))
 
 
-app.run()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
+
