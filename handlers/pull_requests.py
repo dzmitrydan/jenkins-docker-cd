@@ -4,8 +4,8 @@ import requests
 from flask import jsonify
 
 TOKEN = os.getenv("TOKEN")
-#HEADERS = {'Authorization': f'Bearer {TOKEN}'}
-HEADERS = {}
+HEADERS = {'Authorization': f'Bearer {TOKEN}'}
+
 
 def get_pull_requests(state):
     """
