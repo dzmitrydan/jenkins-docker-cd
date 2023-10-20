@@ -1,9 +1,11 @@
 
 import os
+import requests
+from flask import jsonify
 
 TOKEN = os.getenv("TOKEN")
-HEADERS = {'Authorization': f'Bearer {TOKEN}'}
-
+#HEADERS = {'Authorization': f'Bearer {TOKEN}'}
+HEADERS = {}
 
 def get_pull_requests(state):
     """
@@ -15,5 +17,21 @@ def get_pull_requests(state):
     """
 
     # Write your code here
+    url = f"https://api.github.com/repos/boto/boto3/pulls?state={state}&per_page=100"
+    response = requests.get(url, headers=HEADERS)
+    print("START: ", response.status_code)
+    if response.status_code == 200:
+        data = response.json()
+        pull_requests = []
+        for pr in data:
+            pull_requests.append({
+                "title": pr["title"],
+                "num": pr["number"],
+                "link": pr["html_url"]
+            })
+        print(pull_requests)
+        print("REQUEST: ", pull_requests)
+        return pull_requests
+    else:
+        return jsonify({"error": "Failed to retrieve pull requests."})
 
-    return []

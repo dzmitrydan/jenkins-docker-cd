@@ -1,5 +1,5 @@
-flask==2.0.1
-requests==2.25.1
+flask==2.3.3
+requests==2.31.0
 flake8==3.9.2
 pycodestyle==2.7.0
 pytest==7.1.2
