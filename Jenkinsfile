@@ -15,7 +15,7 @@ pipeline {
             agent any
             steps {
                 script {
-                    sh 'docker build -t flask-app .'
+                    sh 'docker build -t flask-app-dev .'
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
             agent any
             steps {
                 script {
-                    sh 'docker run -d -p 5000:5000 --rm --name running-flask-app flask-app'
+                    sh 'docker run -d -p 5000:5000 --rm --name running-flask-app-dev flask-app-dev'
                 }
             }
         }
