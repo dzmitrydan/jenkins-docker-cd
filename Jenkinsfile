@@ -23,7 +23,7 @@ pipeline {
             agent any
             steps {
                 script {
-                    sh 'docker run -d -p 5001:5000 flask-app-dev'
+                    sh 'docker run -d -p 5001:5000 --rm --name running-flask-app-dev flask-app-dev'
                 }
             }
         }
