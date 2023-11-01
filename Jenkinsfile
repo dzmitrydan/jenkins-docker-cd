@@ -11,11 +11,6 @@ pipeline {
                 sh 'python --version'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'echo test'
-            }
-        }
         stage('Docker build') {
             agent any
             steps {
