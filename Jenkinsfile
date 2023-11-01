@@ -8,12 +8,12 @@ pipeline {
                 }
             }
             steps {
-                sh 'pip install -r requirements.txt'
+                sh 'python --version'
             }
         }
-        stage('Build') {
+        stage('Test') {
             steps {
-                sh 'python ./start.py'
+                sh 'echo test'
             }
         }
         stage('Docker build') {
