@@ -1,4 +1,4 @@
-if ( IMAGE_TAG == "production" ) {
+if ( IMAGE_TAG == null ) {
     IMAGE_TAG = "1.0"
 }
 pipeline {
