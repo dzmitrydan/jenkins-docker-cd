@@ -13,3 +13,9 @@ Push into the repository:
 - Modified start.py
 - build.sh
 - docker-compose.yml
+
+
+Install Docker:
+```
+docker run -d -p 8082:8080 --name "jenkins" -v jenkins_home:/var/jenkins_home -v //var/run/docker.sock:/var/run/docker.sock -v //var/opt/jenkins:/var/opt/jenkins liatrio/jenkins-alpine
+```
