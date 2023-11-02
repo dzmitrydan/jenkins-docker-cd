@@ -1,3 +1,6 @@
+if ( IMAGE_TAG == "production" ) {
+    IMAGE_TAG = "1.0"
+}
 pipeline {
     agent none
     stages {
