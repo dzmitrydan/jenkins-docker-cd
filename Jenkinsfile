@@ -26,8 +26,8 @@ pipeline {
             agent any
             steps {
                 script {
-                    if ( IMAGE_TAG == null ) {
-                        IMAGE_TAG = "1.0"
+                    if ( ${IMAGE_TAG} == null ) {
+                        ${IMAGE_TAG} = "1.0"
                     }
                     sh 'docker run -d -p 5000:5000 --rm --name running-flask-app-main flask-app-main:v${IMAGE_TAG}'
                 }
